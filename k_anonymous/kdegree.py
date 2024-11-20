@@ -321,7 +321,7 @@ if __name__ == '__main__':
     print("Degree sequence of the original graph:", degree_sequence)
 
     # 设置匿名参数 k 和噪声参数 noise
-    k = 10  # 我们设置 k 为 3，因为原始图中没有三个或更多节点有相同的度
+    k = 2  # 我们设置 k 为 3，因为原始图中没有三个或更多节点有相同的度
     noise = 1
 
     # 调用匿名化函数
