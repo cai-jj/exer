@@ -4,6 +4,7 @@
 import networkx as nx
 import numpy as np
 import random as rn
+from util.file_util import FileUtil
 
 def sort_dv(dv):
     dv.sort(reverse=True)
@@ -274,7 +275,8 @@ if __name__ == '__main__':
     # # 创建一个简单的非 k-匿名图
     # G = nx.Graph()
     # # 添加边以形成一个非 k-匿名的度序列
-    # edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 0), (0, 2)]
+    # edges = [(int('0'), int('1')), (int('1'), int('2')), (int('2'), int('3')), (int('3'), int('4')), (int('4'), int('5')),
+    #          (int('5'), int('0')), (int('0'), int('2'))]
     # G.add_edges_from(edges)
     #
     # # 打印原始图的信息
@@ -297,14 +299,41 @@ if __name__ == '__main__':
     # else:
     #     print("Failed to create an anonymized graph.")
 
-    G = generate_non_k_anonymous_graph()
-    print("原始图：")
-    print_G(G)
-    k = 3
-    noise = 10
-    Ga = graph_anonymiser(G, k, noise, with_deletions=True)
-    print("匿名图：")
-    print_G(Ga)
+    # G = generate_non_k_anonymous_graph()
+    # print("原始图：")
+    # print_G(G)
+    # k = 3
+    # noise = 10
+    # Ga = graph_anonymiser(G, k, noise, with_deletions=True)
+    # print("匿名图：")
+    # print_G(Ga)
+    domain_map = FileUtil.read_json_from_file('../number_domain_map.json')
+    G = nx.Graph()
+    edges = []
+    for key, value in domain_map.items():
+        for item in value:
+            edges.append((int(key), int(item)))
+    G.add_edges_from(edges)
+
+    # 打印原始图的信息
+    print("Original Graph - Nodes:", G.nodes(), "Edges:", G.edges())
+    degree_sequence = [d for n, d in G.degree()]
+    print("Degree sequence of the original graph:", degree_sequence)
+
+    # 设置匿名参数 k 和噪声参数 noise
+    k = 10  # 我们设置 k 为 3，因为原始图中没有三个或更多节点有相同的度
+    noise = 1
+
+    # 调用匿名化函数
+    Ga = graph_anonymiser(G, k, noise, with_deletions=False)
+
+    # 如果成功返回了匿名化的图，则打印其信息
+    if Ga is not None:
+        print("Anonymized Graph - Nodes:", Ga.nodes(), "Edges:", Ga.edges())
+        anonymized_degree_sequence = [d for n, d in Ga.degree()]
+        print("Degree sequence of the anonymized graph:", anonymized_degree_sequence)
+    else:
+        print("Failed to create an anonymized graph.")
 
 
 
