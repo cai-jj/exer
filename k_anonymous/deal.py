@@ -15,6 +15,7 @@ if __name__ == '__main__':
         temp_map[item] = str(count)
         count += 1
     print(temp_map)
+    FileUtil.write_json_to_file(temp_map, '../domain_to_number_map.json')
     number_domain_map = {}
     for key, value in domain_map.items():
         newKey = temp_map[key]
@@ -24,4 +25,4 @@ if __name__ == '__main__':
         number_domain_map[newKey] = value_list
 
     print(number_domain_map)
-    FileUtil.write_json_to_file(number_domain_map, '../number_domain_map.json')
+    FileUtil.write_json_to_file(number_domain_map, '../domain_map_to_number_map.json')

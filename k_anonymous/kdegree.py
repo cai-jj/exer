@@ -307,7 +307,7 @@ if __name__ == '__main__':
     # Ga = graph_anonymiser(G, k, noise, with_deletions=True)
     # print("匿名图：")
     # print_G(Ga)
-    domain_map = FileUtil.read_json_from_file('../number_domain_map.json')
+    domain_map = FileUtil.read_json_from_file('../domain_map_to_number_map.json')
     G = nx.Graph()
     edges = []
     for key, value in domain_map.items():
