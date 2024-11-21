@@ -5,150 +5,105 @@ import networkx as nx
 
 from util.file_util import FileUtil
 
-import json
-from collections import defaultdict
 
-
-def write_neighbor_vector_groups_to_file(neighbor_vector_groups, file_path):
+### 计算代价
+def calculate_merge_cost(neighbor_vectors, group1, group2):
     """
-    将邻域向量组写入 JSON 文件。
+    计算将节点 node 加入 group 的合并代价，并返回新的领域向量。
 
-    :param neighbor_vector_groups: 邻域向量组的字典
-    :param file_path: 输出文件的路径
+    :param neighbor_vectors: 存储每个节点的领域向量
+    :param node: 待加入的节点
+    :param group: 目标组
+    :return: 合并代价, 新的领域向量
     """
-    # 将 defaultdict 转换为普通字典，以便 json 序列化
-    neighbor_vector_groups_dict = {str(degree): {str(vector): nodes for vector, nodes in groups.items()} for
-                                   degree, groups in neighbor_vector_groups.items()}
+    node_vector = neighbor_vectors[group1[0]]
+    target_vector = neighbor_vectors[group2[0]]  # 组内的任意一个节点的领域向量
 
-    with open(file_path, 'w') as f:
-        json.dump(neighbor_vector_groups_dict, f, indent=4)
+    cost = 0
+    new_vector = node_vector[:]
+    for i in range(len(node_vector)):
+        if node_vector[i] == 0 and target_vector[i] == 1:
+            new_vector[i] = 1
+            cost += 1  # 将 0 变为 1 的代价
+        elif node_vector[i] == 1 and target_vector[i] == 0:
+            new_vector[i] = 1
+            cost += 1
+    return cost * (len(group1) + len(group2)), new_vector
 
-    print(f"Results written to '{file_path}'")
 
-
-### 读取文件的方法
-def read_neighbor_vector_groups_from_file(file_path):
+def k_anonymize_directed(G, k):
     """
-    从 JSON 文件读取邻域向量组。
+    对有向图进行 k-匿名化处理。
 
-    :param file_path: 输入文件的路径
-    :return: 邻域向量组的字典
+    :param G: 有向图
+    :param k: k-匿名性参数
+    :return: k-匿名化的图, 新的分组
     """
-    with open(file_path, 'r') as f:
-        neighbor_vector_groups_dict = json.load(f)
+    # 计算邻域向量
+    nodes = G.nodes()
+    in_degree_vectors = {}
+    for node in nodes:
+        in_neighbors = set(G.predecessors(node))  # 获取入度邻居
+        vector = [1 if n in in_neighbors or n == node else 0 for n in nodes]
+        in_degree_vectors[node] = vector
+    # 按照领域向量进行分组
+    vector_groups = defaultdict(list)
+    for node in nodes:
+        vector = tuple(in_degree_vectors[node])  # 将向量转换为元组以便作为字典的键
+        vector_groups[vector].append(node)
+    # 筛选出所有节点数量小于 k 的分组
+    small_groups = [(vector, nodes) for vector, nodes in vector_groups.items() if len(nodes) < k]
 
-    # 将字符串键转换回整数和元组
-    neighbor_vector_groups = {}
-    for degree_str, groups in neighbor_vector_groups_dict.items():
-        degree = int(degree_str)
-        neighbor_vector_groups[degree] = {}
-        for vector_str, nodes in groups.items():
-            vector = tuple(map(int, vector_str.strip('()').split(', ')))
-            neighbor_vector_groups[degree][vector] = nodes
+    while small_groups:
+        vector, nodes = small_groups.pop(0)
+        if len(nodes) < k:
+            # 尝试合并其他小于 k 的分组
+            min_cost = float('inf')
+            best_other_group = None
+            best_new_vector = None
 
-    return neighbor_vector_groups
+            for other_vector, other_nodes in small_groups:
+                if other_vector != vector:
+                    merge_cost, new_vector = calculate_merge_cost(in_degree_vectors, nodes, other_nodes)
+                    if merge_cost < min_cost:
+                        min_cost = merge_cost
+                        best_other_group = (other_vector, other_nodes)
+                        best_new_vector = new_vector
+
+            if best_other_group:
+                other_vector, other_nodes = best_other_group
+                other_nodes.extend(nodes)
+                del vector_groups[vector]
+                # 更新领域向量
+                for node in nodes:
+                    in_degree_vectors[node] = best_new_vector
+                # 重新检查合并后的组是否仍需处理
+                if len(other_nodes) < k:
+                    small_groups.append((other_vector, other_nodes))
+            else:
+                # 如果无法合并任何分组，重新将该组加入队列
+                small_groups.append((vector, nodes))
+
+    return G, vector_groups
 
 if __name__ == '__main__':
 
     domain_map = FileUtil.read_json_from_file('domain_map_to_number_map.json')
-    # print("domain_map:", len(domain_map))
-    G = nx.Graph()
+
+    # 创建有向图
+    G = nx.DiGraph()
     edges = []
     for key, value in domain_map.items():
         for item in value:
-            edges.append((key, item))
+            edges.append((item, key))  # item 指向 key
     G.add_edges_from(edges)
 
-    nodes = G.nodes()
-    neighbor_vectors = {}
-    for node in domain_map.keys():
-        # 获取节点的邻居
-        neighbors = set(G.neighbors(node))
-        # 初始化邻域向量
-        vector = [1 if n in neighbors or n == node else 0 for n in nodes]
-        # 将向量存储到字典中
-        neighbor_vectors[node] = vector
+    # 进行 k-匿名化处理
+    k = 3
+    G_anonymized, anonymized_vector_groups = k_anonymize_directed(G, k)
 
-    # for key in sorted(neighbor_vectors.keys(), key = int):
-    #     print(f"Node {key}: {neighbor_vectors[key]}")
-    # FileUtil.write_json_to_file(neighbor_vectors, 'test.json')
-    # print("neighbor_vectors:", len(neighbor_vectors))
-
-    # 按照节点度进行分组
-    degree_groups = defaultdict(list)
-    for node in domain_map.keys():
-        degree = G.degree(node)
-        degree_groups[degree].append(node)
-    # for degree, values in degree_groups.items():
-    #     print(f"Degree {degree}:")
-    #     print(values)
-    neighbor_vector_groups = {}
-    for degree, nodes_in_group in degree_groups.items():
-        neighbor_vector_groups[degree] = defaultdict(list)
-        for node in nodes_in_group:
-            vector = tuple(neighbor_vectors[node])  # 将向量转换为元组以便作为字典的键
-            neighbor_vector_groups[degree][vector].append(node)
-    print("neighbor_vector_groups:", len(neighbor_vector_groups))
-    print("Degree Groups and Neighbor Vector Groups:")
-    for degree, groups in neighbor_vector_groups.items():
-        print(f"Degree {degree}:")
-        for vector, nodes in groups.items():
-            print(f"  Vector {vector}: {nodes}")
-    print("\nOriginal Graph - Nodes:", nodes, "Edges:", list(G.edges()))
-    write_neighbor_vector_groups_to_file(neighbor_vector_groups, 'neighbor_vector_groups.json')
-
-    new_neighbor_vector_groups = read_neighbor_vector_groups_from_file('neighbor_vector_groups.json')
-    for degree, groups in new_neighbor_vector_groups.items():
-        print(f"Degree {degree}:")
-        for vector, nodes in groups.items():
-            print(f"  Vector {vector}: {nodes}")
-
-
-    # # 创建一个简单的非 k-匿名图
-    # G = nx.Graph()
-    # # 添加边以形成一个非 k-匿名的度序列
-    # edges = [('0', '1'), ('1', '2'), ('2', '3'), ('3', '4'), ('4', '5'),
-    #          ('5', '0'), ('0', '2'), ('1', '5')]
-    # G.add_edges_from(edges)
-    #
-    # nodes = G.nodes()
-    # neighbor_vectors = {}
-    # for node in nodes:
-    #     # 获取节点的邻居
-    #     neighbors = set(G.neighbors(node))
-    #     # 初始化邻域向量
-    #     vector = [1 if n in neighbors or n == node else 0 for n in nodes]
-    #     # 将向量存储到字典中
-    #     neighbor_vectors[node] = vector
-    #
-    # # for key in sorted(neighbor_vectors.keys(), key = int):
-    # #     print(f"Node {key}: {neighbor_vectors[key]}")
-    # # FileUtil.write_json_to_file(neighbor_vectors, 'test.json')
-    # # print("neighbor_vectors:", len(neighbor_vectors))
-    #
-    # # 按照节点度进行分组
-    # degree_groups = defaultdict(list)
-    # for node in nodes:
-    #     degree = G.degree(node)
-    #     degree_groups[degree].append(node)
-    # # for degree, values in degree_groups.items():
-    # #     print(f"Degree {degree}:")
-    # #     print(values)
-    # neighbor_vector_groups = {}
-    # for degree, nodes_in_group in degree_groups.items():
-    #     neighbor_vector_groups[degree] = defaultdict(list)
-    #     for node in nodes_in_group:
-    #         vector = tuple(neighbor_vectors[node])  # 将向量转换为元组以便作为字典的键
-    #         neighbor_vector_groups[degree][vector].append(node)
-    # print("neighbor_vector_groups:", len(neighbor_vector_groups))
-    # print("Degree Groups and Neighbor Vector Groups:")
-    # for degree, groups in neighbor_vector_groups.items():
-    #     print(f"Degree {degree}:")
-    #     for vector, nodes in groups.items():
-    #         print(f"  Vector {vector}: {nodes}")
-    # print("\nOriginal Graph - Nodes:", nodes, "Edges:", list(G.edges()))
-    # with open('neighbor_vector_groups.json', 'w') as f:
-    #     # 将 defaultdict 转换为普通字典，以便 json 序列化
-    #     neighbor_vector_groups_dict = {str(degree): {str(vector): nodes for vector, nodes in groups.items()} for
-    #                                    degree, groups in neighbor_vector_groups.items()}
-    #     json.dump(neighbor_vector_groups_dict, f, indent=4)
+    # 打印 k-匿名化后的结果
+    print("\nAnonymized Graph - Nodes:", list(G_anonymized.nodes()), "Edges:", list(G_anonymized.edges()))
+    print("Anonymized Vector Groups:")
+    for vector, nodes in anonymized_vector_groups.items():
+        print(f"  Vector {vector}: {nodes}")
