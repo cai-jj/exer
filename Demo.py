@@ -31,7 +31,7 @@ def calculate_merge_cost(neighbor_vectors, group1, group2):
     return cost * (len(group1) + len(group2)), new_vector
 
 
-def k_anonymize_directed(G, k):
+def k_anonymize_directed(G, k, domain_map):
     """
     对有向图进行 k-匿名化处理。
 
@@ -40,51 +40,61 @@ def k_anonymize_directed(G, k):
     :return: k-匿名化的图, 新的分组
     """
     # 计算邻域向量
+    print("domain_map:", len(domain_map))
     nodes = G.nodes()
     in_degree_vectors = {}
-    for node in nodes:
+    for node in domain_map.keys():
         in_neighbors = set(G.predecessors(node))  # 获取入度邻居
         vector = [1 if n in in_neighbors or n == node else 0 for n in nodes]
         in_degree_vectors[node] = vector
     # 按照领域向量进行分组
     vector_groups = defaultdict(list)
-    for node in nodes:
+    for node in domain_map.keys():
         vector = tuple(in_degree_vectors[node])  # 将向量转换为元组以便作为字典的键
         vector_groups[vector].append(node)
+    print("vector_groups:", len(vector_groups))
     # 筛选出所有节点数量小于 k 的分组
-    small_groups = [(vector, nodes) for vector, nodes in vector_groups.items() if len(nodes) < k]
-
+    # small_groups = [(vector, nodes) for vector, nodes in vector_groups.items() if len(nodes) < k]
+    small_groups = []
+    new_groups = defaultdict(list)
+    for vector, nodes in vector_groups.items():
+        if len(nodes) < k:
+            small_groups.append((vector, nodes))
+        else:
+            new_groups[vector] = nodes
     while small_groups:
         vector, nodes = small_groups.pop(0)
-        if len(nodes) < k:
+        while len(nodes) < k:
             # 尝试合并其他小于 k 的分组
             min_cost = float('inf')
             best_other_group = None
             best_new_vector = None
 
             for other_vector, other_nodes in small_groups:
-                if other_vector != vector:
-                    merge_cost, new_vector = calculate_merge_cost(in_degree_vectors, nodes, other_nodes)
-                    if merge_cost < min_cost:
-                        min_cost = merge_cost
-                        best_other_group = (other_vector, other_nodes)
-                        best_new_vector = new_vector
+                merge_cost, new_vector = calculate_merge_cost(in_degree_vectors, nodes, other_nodes)
+                if merge_cost < min_cost:
+                    min_cost = merge_cost
+                    best_other_group = (other_vector, other_nodes)
+                    best_new_vector = new_vector
 
             if best_other_group:
+                small_groups.remove(best_other_group)
                 other_vector, other_nodes = best_other_group
-                other_nodes.extend(nodes)
-                del vector_groups[vector]
+                nodes.extend(other_nodes)
                 # 更新领域向量
                 for node in nodes:
                     in_degree_vectors[node] = best_new_vector
                 # 重新检查合并后的组是否仍需处理
-                if len(other_nodes) < k:
-                    small_groups.append((other_vector, other_nodes))
+                if len(nodes) < k:
+                    continue
+                else:
+                    new_groups[tuple(best_new_vector)] = nodes
+                    break
             else:
-                # 如果无法合并任何分组，重新将该组加入队列
-                small_groups.append((vector, nodes))
+                new_groups[tuple(vector)] = nodes
+                break
 
-    return G, vector_groups
+    return G, new_groups, vector_groups
 
 if __name__ == '__main__':
 
@@ -100,8 +110,12 @@ if __name__ == '__main__':
 
     # 进行 k-匿名化处理
     k = 3
-    G_anonymized, anonymized_vector_groups = k_anonymize_directed(G, k)
-
+    G_anonymized, anonymized_vector_groups, vector_groups = k_anonymize_directed(G, k, domain_map)
+    # 打印 k-匿名化后的结果
+    print("\norigin Graph - Nodes:", list(G.nodes()), "Edges:", list(G.edges()))
+    print("Origin Vector Groups:")
+    for vector, nodes in vector_groups.items():
+        print(f"  Vector {vector}: {nodes}")
     # 打印 k-匿名化后的结果
     print("\nAnonymized Graph - Nodes:", list(G_anonymized.nodes()), "Edges:", list(G_anonymized.edges()))
     print("Anonymized Vector Groups:")
