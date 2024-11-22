@@ -96,6 +96,7 @@ def k_anonymize_directed(G, k, domain_map):
             else:
                 new_groups[tuple(vector)] = nodes
                 break
+    # todo 还要遍历集合，判断是不是有分组小于k,如果小于就把它合并到其他的分组里面
     return G, new_groups
 
 if __name__ == '__main__':
