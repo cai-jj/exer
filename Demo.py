@@ -119,3 +119,24 @@ if __name__ == '__main__':
     print("Anonymized Vector Groups:")
     for vector, nodes in anonymized_vector_groups.items():
         print(f"  Vector {vector}: {nodes}")
+
+    # 匿名后的number_map
+    new_number_map = {}
+    for vector, nodes in anonymized_vector_groups.items():
+        for node in nodes:
+            sub_nodes = []
+            for index, value in enumerate(vector):
+                if value == 1:
+                    sub_nodes.append(str(index))
+            new_number_map[node] = sub_nodes
+    FileUtil.write_json_to_file(new_number_map, 'new_number_map.json')
+    # number_map to domain_map
+    domain_number_map = FileUtil.read_json_from_file('domain_to_number_map.json')
+    reversed_map = {str(value): key for key, value in domain_number_map.items()}
+    new_domain_map = {}
+    for key, value in new_number_map.items():
+        nodes = []
+        for item in value:
+            nodes.append(reversed_map[item])
+        new_domain_map[reversed_map[key]] = nodes
+    FileUtil.write_json_to_file(new_domain_map, 'new_domain_map.json')
