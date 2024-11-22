@@ -112,7 +112,7 @@ if __name__ == '__main__':
     G.add_edges_from(edges)
 
     # 进行 k-匿名化处理
-    k = 4
+    k = 2
     G_anonymized, anonymized_vector_groups = k_anonymize_directed(G, k, domain_map)
     # 打印 k-匿名化后的结果
     print("\nAnonymized Graph - Nodes:", list(G_anonymized.nodes()), "Edges:", list(G_anonymized.edges()))
