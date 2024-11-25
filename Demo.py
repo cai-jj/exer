@@ -94,9 +94,22 @@ def k_anonymize_directed(G, k, domain_map):
                     new_groups[tuple(best_new_vector)] = nodes
                     break
             else:
-                new_groups[tuple(vector)] = nodes
+                # 判断当前组是否大于k
+                if len(nodes) < k:
+                    min_cost = float('inf')
+                    best_new_vector = None
+                    for temp_vector, temp_nodes in new_groups.items():
+                        merge_cost, new_vector = calculate_merge_cost(in_degree_vectors, nodes, temp_nodes)
+                        if merge_cost < min_cost:
+                            min_cost = merge_cost
+                            best_new_vector = new_vector
+                    nodes.extend(temp_nodes)
+                    for node in nodes:
+                        in_degree_vectors[node] = best_new_vector
+                    new_groups[tuple(best_new_vector)] = nodes
+                else:
+                    new_groups[tuple(vector)] = nodes
                 break
-    # todo 还要遍历集合，判断是不是有分组小于k,如果小于就把它合并到其他的分组里面
     return G, new_groups
 
 if __name__ == '__main__':
