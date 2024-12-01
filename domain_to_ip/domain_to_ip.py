@@ -60,7 +60,7 @@ if __name__ == '__main__':
         domains.add(key)
         domains.update(values)
     for domain in domains:
-        iplist = get_all_ips_from_domain(domain, 5, 0)
+        iplist = get_all_ips_from_domain(domain)
         domain_ip_map[domain] = iplist
         print(f"The IP addresses for {domain} are: {iplist}")
     outfile = '../domain_ip_map.json'

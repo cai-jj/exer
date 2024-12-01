@@ -6,14 +6,16 @@ import subprocess
 import json
 from util.file_util import FileUtil
 
+TSHARK_PATH = r'C:\Program Files\Wireshark\tshark.exe'
 def start_tshark(output_file):
 
     # 构建捕获过滤器
     capture_filter = 'port 80 or port 443'
     # 启动 tshark，指定输出文件和捕获过滤器
     # en0网卡配置一下
+
     tshark_process = subprocess.Popen(
-        ['tshark', '-i', 'en0', '-f', capture_filter, '-w', output_file],
+        [TSHARK_PATH, '-i', 'WLAN', '-f', capture_filter, '-w', output_file],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
@@ -21,14 +23,12 @@ def start_tshark(output_file):
 
 def stop_tshark(tshark_process):
     tshark_process.terminate()
-    out, err = tshark_process.communicate()
-    if err:
-        print(f'Tshark error: {err.decode()}')
-    else:
-        print(f'Tshark stopped and data saved to {output_file}')
+    tshark_process.communicate()
+    print(f'Tshark stopped and data saved to {output_file}')
 
 def extract_ips_from_pcap(pcap_file):
-    result = subprocess.run(['tshark', '-r', pcap_file, '-T', 'fields', '-e', 'ip.src', '-e', 'ip.dst'],
+
+    result = subprocess.run([TSHARK_PATH, '-r', pcap_file, '-T', 'fields', '-e', 'ip.src', '-e', 'ip.dst'],
                             capture_output=True, text=True)
     # 将每行的IP地址对转换为元组，并去除空值
     ip_pairs = [tuple(line.split()) for line in result.stdout.splitlines() if line.strip()]
@@ -43,6 +43,13 @@ def extract_ips_from_pcap(pcap_file):
     unique_ips = list(all_ips)
 
     return unique_ips
+def clear_browser_cache(driver):
+    # 清除浏览器缓存
+    driver.execute_cdp_cmd("Network.clearBrowserCache", {})
+    driver.execute_cdp_cmd("Network.clearBrowserCookies", {})
+
+    # 清除浏览数据
+    driver.execute_cdp_cmd("Storage.clearDataForOrigin", {"origin": "*", "storageTypes": "all"})
 
 def visit_website(url, output_file):
     # 设置 Chrome 选项
@@ -51,7 +58,7 @@ def visit_website(url, output_file):
     chrome_options.add_argument('--disable-gpu')
 
     # 指定 ChromeDriver 的路径
-    service = Service('/usr/local/bin/chromedriver')  # 替换为你的 chromedriver 路径
+    service = Service('C:\\Users\\old driver\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe')  # 替换为你的 chromedriver 路径
 
     # 创建 WebDriver 对象
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -71,6 +78,8 @@ def visit_website(url, output_file):
     except Exception as e:
         print(f'Error visiting {url}: {e}')
     finally:
+        # 清除浏览器缓存
+        clear_browser_cache(driver)
         # 关闭浏览器
         driver.quit()
 
@@ -78,7 +87,7 @@ def visit_website(url, output_file):
 
 if __name__ == '__main__':
     # 访问网站，打开Wireshark抓取对应的IP地址
-    urls = FileUtil.read_list_from_file('domain.txt')
+    urls = FileUtil.read_list_from_file('../domain.txt')
     capture_ip_map = {}
     for i, url in enumerate(urls):
         output_file = f'output_{i}.pcap'
