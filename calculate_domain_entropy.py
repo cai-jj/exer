@@ -2,7 +2,7 @@ import math
 from collections import defaultdict
 from util.file_util import FileUtil
 if __name__ == '__main__':
-    data = FileUtil.read_json_from_file('domain_to_domain_map.json')
+    data = FileUtil.read_json_from_file('new_all_domain_to_domain_map.json')
     # 统计每个主域名和子域名的出现次数
     main_domain_counts = defaultdict(int)
     subdomain_counts = defaultdict(int)
@@ -19,14 +19,14 @@ if __name__ == '__main__':
     # 计算每个主域名和子域名的概率
     main_domain_probabilities = {main_domain: count / total_main_domains for main_domain, count in
                                  main_domain_counts.items()}
-    subdomain_probabilities = {subdomain: count / total_subdomains for subdomain, count in subdomain_counts.items()}
+    subdomain_probabilities = {subdomain: count / total_main_domains for subdomain, count in subdomain_counts.items()}
 
 
     # 计算信息熵
     def calculate_entropy(probability):
         if probability == 0:
             return 0
-        return -probability * math.log2(probability)
+        return -math.log2(probability)
 
 
     # 计算主域名的信息熵
@@ -48,5 +48,5 @@ if __name__ == '__main__':
     all_entropies = {**main_domain_entropies, **subdomain_entropies}
 
     # 将结果写入文件
-    output_file = 'domain_entropies.json'
+    output_file = 'all_domain_entropies.json'
     FileUtil.write_json_to_file(all_entropies, output_file)

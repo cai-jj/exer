@@ -1,0 +1,232 @@
+{
+    "www.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "news.163.com": [
+        "yt-adp.ws.126.net",
+        "g.163.com",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "sports.163.com": [
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "relottery.ws.126.net",
+        "cms-bucket.nosdn.127.net",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "hongcai.163.com": [
+        "img1.cache.netease.com",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net",
+        "cms-bucket.ws.126.net"
+    ],
+    "tech.163.com": [
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "cms-bucket.nosdn.127.net",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "mobile.163.com": [
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "culture.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "v.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "open.163.com": [
+        "s2.open.163.com",
+        "open-image.ws.126.net",
+        "static.ws.126.net",
+        "c.open.163.com"
+    ],
+    "auto.163.com": [
+        "img1.cache.netease.com",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "pic-bucket.ws.126.net",
+        "g.163.com",
+        "img3.cache.netease.com",
+        "pic-bucket.nosdn.127.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "gd.news.163.com": [
+        "img1.cache.netease.com",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "fps-pro.ws.126.net",
+        "img2.cache.netease.com",
+        "dingyue.ws.126.net",
+        "house.163.com",
+        "urswebzj.nosdn.127.net"
+    ],
+    "gov.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "dy.163.com": [
+        "dingyue.nosdn.127.net",
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "ent.163.com": [
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "img2.cache.netease.com",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "m.163.com": [
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "g.163.com",
+        "ipservice.ws.126.net",
+        "channel.m.163.com",
+        "vmonitor.ws.netease.com",
+        "nex.163.com"
+    ],
+    "money.163.com": [
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "biz.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net",
+        "cms-bucket.ws.126.net"
+    ],
+    "fashion.163.com": [
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "edu.163.com": [
+        "static.ws.126.net",
+        "img1.126.net",
+        "cms-bucket.nosdn.127.net",
+        "g.163.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "baby.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "art.163.com": [
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "nssale.nosdn.127.net",
+        "cms-bucket.nosdn.127.net",
+        "img2.cache.netease.com",
+        "urswebzj.nosdn.127.net"
+    ],
+    "gz.house.163.com": [
+        "img1.cache.netease.com",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "img1.126.net",
+        "fps-pro.ws.126.net",
+        "g.163.com",
+        "public.house.163.com",
+        "bjnewsrec-cv.ws.126.net",
+        "yt-adp.nosdn.127.net",
+        "img3.126.net",
+        "dingyue.ws.126.net",
+        "house-public.ws.126.net",
+        "house.163.com",
+        "urswebzj.nosdn.127.net"
+    ],
+    "home.163.com": [
+        "img1.cache.netease.com",
+        "yt-adp.ws.126.net",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "qiyukf.nosdn.127.net",
+        "fps-pro.ws.126.net",
+        "cms-bucket.nosdn.127.net",
+        "g.163.com",
+        "img2.cache.netease.com",
+        "img3.126.net",
+        "urswebzj.nosdn.127.net",
+        "nos.netease.com"
+    ],
+    "esf.house.163.com": [
+        "img1.cache.netease.com"
+    ],
+    "jiankang.163.com": [
+        "img1.cache.netease.com",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "cms-bucket.nosdn.127.net",
+        "img2.cache.netease.com",
+        "nimg.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "jiu.163.com": [
+        "img1.cache.netease.com",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "g.163.com",
+        "active.163.com",
+        "urswebzj.nosdn.127.net"
+    ],
+    "gongyi.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net",
+        "cms-bucket.ws.126.net"
+    ],
+    "travel.163.com": [
+        "static.ws.126.net",
+        "videoimg.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "fps-pro.ws.126.net",
+        "img2.cache.netease.com",
+        "urswebzj.nosdn.127.net"
+    ],
+    "war.163.com": [
+        "g.163.com",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "hea.163.com": [
+        "nimg.ws.126.net",
+        "static.ws.126.net",
+        "urswebzj.nosdn.127.net"
+    ],
+    "product.auto.163.com": [
+        "auto.163.com",
+        "static.ws.126.net",
+        "cms-bucket.ws.126.net",
+        "pic-bucket.ws.126.net",
+        "img3.cache.netease.com",
+        "urswebzj.nosdn.127.net"
+    ]
+}

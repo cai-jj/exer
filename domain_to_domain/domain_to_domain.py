@@ -8,6 +8,7 @@ import urllib.parse
 from util.file_util import FileUtil
 # 获取网页托管的域名
 def get_domains_from_url(url, headers=None):
+
     if headers is None:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
@@ -65,7 +66,7 @@ def process_url(url):
 
 
 if __name__ == '__main__':
-    outfile = '../domain.txt'
+    outfile = '../new_all_domain.txt'
     domains = FileUtil.read_list_from_file(outfile)
     domain_map = {}
     for domain in domains:
@@ -75,5 +76,5 @@ if __name__ == '__main__':
             domains.remove(url)
         domain_list = list(domains)
         domain_map[url] = domain_list
-    outfile = '../domain_to_domain_map.json'
+    outfile = '../all_domain_to_domain_map.json'
     FileUtil.write_json_to_file(domain_map,outfile)

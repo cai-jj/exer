@@ -72,7 +72,7 @@ def remove_common_values(domain_map):
 
 if __name__ == '__main__':
     result = []
-    outfile = '../domain_to_domain_map.json'
+    outfile = '../new_all_domain_to_domain_map.json'
     temp_domain_map = FileUtil.read_json_from_file(outfile)
 
     domain_map = remove_common_values(temp_domain_map)
@@ -83,13 +83,15 @@ if __name__ == '__main__':
     print("new map length: ", len(domain_map))
     for key, value in domain_map.items():
         print(f"key: {key}, value: {value}")
-
+    domain_ip_map = FileUtil.read_json_from_file('../all_domain_ip_map.json')
     for key, values in domain_map.items():
-        dp_ips = get_all_ips_from_domain(key, 5, 0)
+        dp_ips = domain_ip_map[key]
+        # dp_ips = get_all_ips_from_domain(key, 5, 0)
         print(f"The IP addresses for {key} are: {dp_ips}")
         ds_ips = set()
         for v in values:
-            iplist = get_all_ips_from_domain(v, 5, 0)
+            # iplist = get_all_ips_from_domain(v, 5, 0)
+            iplist = domain_ip_map[v]
             print(f"The IP addresses for {v} are: {iplist}")
             ds_ips.update(iplist)
         result.append({
@@ -99,10 +101,10 @@ if __name__ == '__main__':
             "ds_ips": list(ds_ips)
         })
 
-    outfile = '../domain_map_to_domain_ip_map.json'
+    outfile = '../all_domain_map_to_domain_ip_map.json'
     FileUtil.write_json_to_file(result, outfile)
 
-    outfile = '../domain_map_to_domain_ip_map.json'
+    # outfile = '../all_domain_map_to_domain_ip_map.json'
     ans = FileUtil.read_json_from_file(outfile)
     for item in ans:
         print(item["dp"])

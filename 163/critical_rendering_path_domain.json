@@ -1,0 +1,594 @@
+[
+    {
+        "domain": "www.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "news.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "sports.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "relottery.ws.126.net",
+            "cms-bucket.nosdn.127.net",
+            "nimg.ws.126.net",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "hongcai.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "img1.cache.netease.com",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "img1.cache.netease.com",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "tech.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net",
+            "cms-bucket.nosdn.127.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "mobile.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "culture.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "v.163.com",
+        "dom_loading_resources_domains": [
+            "",
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "open.163.com",
+        "dom_loading_resources_domains": [
+            "static.ws.126.net",
+            "c.open.163.com",
+            "open-image.ws.126.net",
+            "s2.open.163.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "open-image.ws.126.net",
+            "s2.open.163.com"
+        ],
+        "dom_complete_resources_domains": [
+            "open-image.ws.126.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "auto.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "auto.163.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "pic-bucket.ws.126.net",
+            "pic-bucket.nosdn.127.net",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "img3.cache.netease.com",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "auto.163.com"
+        ]
+    },
+    {
+        "domain": "gd.news.163.com",
+        "dom_loading_resources_domains": [
+            "fps-pro.ws.126.net",
+            "img2.cache.netease.com",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "urswebzj.nosdn.127.net",
+            "house.163.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "dingyue.ws.126.net",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "fps-pro.ws.126.net",
+            "img2.cache.netease.com",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "urswebzj.nosdn.127.net",
+            "house.163.com"
+        ]
+    },
+    {
+        "domain": "gov.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "dy.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net",
+            "dingyue.nosdn.127.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "ent.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "img2.cache.netease.com",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "m.163.com",
+        "dom_loading_resources_domains": [
+            "g.163.com",
+            "nex.163.com",
+            "channel.m.163.com",
+            "vmonitor.ws.netease.com",
+            "static.ws.126.net",
+            "ipservice.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "money.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "nimg.ws.126.net",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "biz.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "fashion.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net",
+            "yt-adp.ws.126.net"
+        ]
+    },
+    {
+        "domain": "edu.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "img1.126.net",
+            "static.ws.126.net",
+            "cms-bucket.nosdn.127.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "baby.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "art.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "img2.cache.netease.com",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "nssale.nosdn.127.net",
+            "cms-bucket.nosdn.127.net",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "img2.cache.netease.com",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "gz.house.163.com",
+        "dom_loading_resources_domains": [
+            "gz.house.163.com",
+            "g.163.com",
+            "fps-pro.ws.126.net",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "urswebzj.nosdn.127.net",
+            "public.house.163.com",
+            "house.163.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "img1.126.net",
+            "dingyue.ws.126.net",
+            "house-public.ws.126.net",
+            "yt-adp.nosdn.127.net",
+            "img3.126.net",
+            "static.ws.126.net",
+            "bjnewsrec-cv.ws.126.net",
+            "fps-pro.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "gz.house.163.com",
+            "g.163.com",
+            "fps-pro.ws.126.net",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "urswebzj.nosdn.127.net",
+            "public.house.163.com",
+            "house.163.com"
+        ]
+    },
+    {
+        "domain": "home.163.com",
+        "dom_loading_resources_domains": [
+            "img2.cache.netease.com",
+            "home.163.com",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "nos.netease.com",
+            "urswebzj.nosdn.127.net",
+            "fps-pro.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "qiyukf.nosdn.127.net",
+            "cms-bucket.nosdn.127.net",
+            "yt-adp.ws.126.net",
+            "img3.126.net",
+            "static.ws.126.net",
+            "fps-pro.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "img2.cache.netease.com",
+            "home.163.com",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "nos.netease.com",
+            "urswebzj.nosdn.127.net",
+            "fps-pro.ws.126.net"
+        ]
+    },
+    {
+        "domain": "esf.house.163.com",
+        "dom_loading_resources_domains": [
+            "esf.house.163.com",
+            "img1.cache.netease.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "esf.house.163.com",
+            "img1.cache.netease.com"
+        ]
+    },
+    {
+        "domain": "jiankang.163.com",
+        "dom_loading_resources_domains": [
+            "jiankang.163.com",
+            "img2.cache.netease.com",
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "cms-bucket.nosdn.127.net",
+            "nimg.ws.126.net",
+            "img2.cache.netease.com",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "img2.cache.netease.com",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "jiu.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "active.163.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "img1.cache.netease.com",
+            "static.ws.126.net",
+            "active.163.com"
+        ]
+    },
+    {
+        "domain": "gongyi.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "travel.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "videoimg.ws.126.net",
+            "img2.cache.netease.com",
+            "static.ws.126.net",
+            "fps-pro.ws.126.net",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "war.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "g.163.com",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "hea.163.com",
+        "dom_loading_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "nimg.ws.126.net",
+            "static.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net"
+        ]
+    },
+    {
+        "domain": "product.auto.163.com",
+        "dom_loading_resources_domains": [
+            "auto.163.com",
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net",
+            "product.auto.163.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "pic-bucket.ws.126.net",
+            "static.ws.126.net",
+            "img3.cache.netease.com",
+            "cms-bucket.ws.126.net"
+        ],
+        "dom_complete_resources_domains": [
+            "auto.163.com",
+            "urswebzj.nosdn.127.net",
+            "static.ws.126.net",
+            "product.auto.163.com"
+        ]
+    }
+]

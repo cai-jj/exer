@@ -31,7 +31,7 @@ def clear_dns_cache(password):
         print(f"Unsupported system: {system}")
 
 
-def get_all_ips_from_domain(domain, attempts=20, interval=5):
+def get_all_ips_from_domain(domain, attempts=5, interval=3):
     all_ips = set()
     for attempt in range(attempts):
         try:
@@ -40,8 +40,8 @@ def get_all_ips_from_domain(domain, attempts=20, interval=5):
             clear_dns_cache(password)
             # 使用socket.getaddrinfo进行DNS查询
             results = socket.getaddrinfo(domain, None)
-            ips = {result[-1][0] for result in results}
-            all_ips.update(ips)
+            ipv4_ips = {result[-1][0] for result in results if result[0] == socket.AF_INET}
+            all_ips.update(ipv4_ips)
             print(f"Attempt {attempt + 1}: Found {len(ips)} IPs")
         except socket.gaierror as e:
             print(f"DNS resolution error for {domain}: {e}")
@@ -53,7 +53,7 @@ def get_all_ips_from_domain(domain, attempts=20, interval=5):
 
 if __name__ == '__main__':
     domain_ip_map = {}
-    outfile = '../domain_to_domain_map.json'
+    outfile = '../all_domain_to_domain_map.json'
     domains = set()
     domain_map = FileUtil.read_json_from_file(outfile)
     for key, values in domain_map.items():
@@ -63,6 +63,6 @@ if __name__ == '__main__':
         iplist = get_all_ips_from_domain(domain)
         domain_ip_map[domain] = iplist
         print(f"The IP addresses for {domain} are: {iplist}")
-    outfile = '../domain_ip_map.json'
+    outfile = '../all_domain_ip_map.json'
     FileUtil.write_json_to_file(domain_ip_map, outfile)
 
