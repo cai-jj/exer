@@ -50,8 +50,8 @@ ip1
 ip2
 ip3
 
-比如: 1.ip1, ip2, ip3, ip4，     ip1 ->  d1   d2
-     2.ip1, ip2, ip3, ip5
+比如: 1.ip1, ip2, ip3, ip4，ip5  熵值最大，命中了
+     2.ip1, ip2, ip3, ip5， d->ip4,ip4/,
      ip1, ip2, ip3， ip2,ip2,ip3
 可以改变的：ip，域名和ip映射关系，   不变的：网站的资源
 
@@ -64,3 +64,53 @@ d3 ip1, ip2,ip3
 
 d2 ip1,ip2,ip4  (1,1,0,1)
 d4 ip1,ip2,ip4
+
+
+域名的托管关系(不变)
+domain_subdomain_map = {
+    "example.com": ["sub1.example.com", "sub2.example.com"],
+    "test.com": ["sub3.test.com", "sub4.test.com"],
+    "demo.com": ["sub5.demo.com", "sub6.demo.com"]
+}
+
+# 域名和IP的映射关系map（多对多）
+domain_ip_map = {
+    "example.com": ["192.168.1.1", "192.168.1.2"],
+    "sub1.example.com": ["192.168.1.1"],
+    "sub2.example.com": ["192.168.1.2"],
+    "test.com": ["192.168.1.3", "192.168.1.4"],
+    "sub3.test.com": ["192.168.1.3"],
+    "sub4.test.com": ["192.168.1.4"],
+    "demo.com": ["192.168.1.5", "192.168.1.6"],
+    "sub5.demo.com": ["192.168.1.5"],
+    "sub6.demo.com": ["192.168.1.6"]
+}
+域名权重(不变)
+"domain_weights": {
+    "example.com": 1,
+    "test.com": 1,
+    "demo.com": 1,
+    "sub1.example.com": 0,
+    "sub2.example.com": 0,
+    "sub3.test.com": 0,
+    "sub4.test.com": 0,
+    "sub5.demo.com": 0,
+    "sub6.demo.com": 0
+}
+ip权重(因为ip权重依托于托管的域名，如果增加域名和ip的映射关系，ip的权重需要重新计算)
+"ip_weights": {
+    "192.168.1.1": 0.5,
+    "192.168.1.2": 0.5,
+    "192.168.1.3": 0.5,
+    "192.168.1.4": 0.5,
+    "192.168.1.5": 0.5,
+    "192.168.1.6": 0.5
+}
+
+一个域名：多个ip
+
+想对主域名进行分类，有相同ip的主域名在同一个组，然后对子域名进行分类，有共同ip的子域名在同一个组
+共同ip指的是一个域名包含的所有ip地址，如果不同就通过添加ip和域名的映射保证一样，优先选择一个域名对应ip少的进行调整
+
+
+

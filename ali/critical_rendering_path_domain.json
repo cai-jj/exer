@@ -1,0 +1,388 @@
+[
+    {
+        "domain": "taobao.com",
+        "dom_loading_resources_domains": [
+            "gm.mmstat.com",
+            "res.mmstat.com",
+            "log.mmstat.com",
+            "dfhs.tanx.com",
+            "ecpm.tanx.com",
+            "img.alicdn.com",
+            "gw.alicdn.com",
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "tmall.com",
+        "dom_loading_resources_domains": [
+            "gm.mmstat.com",
+            "res.mmstat.com",
+            "log.mmstat.com",
+            "dfhs.tanx.com",
+            "ecpm.tanx.com",
+            "img.alicdn.com",
+            "gw.alicdn.com",
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "alipay.com",
+        "dom_loading_resources_domains": [
+            "ds.alipay.com",
+            "gw.alipayobjects.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "img.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "gw.alipayobjects.com"
+        ]
+    },
+    {
+        "domain": "aliyun.com",
+        "dom_loading_resources_domains": [
+            "gm.mmstat.com",
+            "log.mmstat.com",
+            "query.aliyun.com",
+            "img.alicdn.com",
+            "cloud-assets.alicdn.com",
+            "gw.alicdn.com",
+            "at.alicdn.com",
+            "g.alicdn.com",
+            "www.aliyun.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "img.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com",
+            "cloud-assets.alicdn.com"
+        ]
+    },
+    {
+        "domain": "alibaba.com",
+        "dom_loading_resources_domains": [
+            "s.alicdn.com",
+            "russian.alibaba.com",
+            "portuguese.alibaba.com",
+            "japanese.alibaba.com",
+            "hebrew.alibaba.com",
+            "g.alicdn.com",
+            "arabic.alibaba.com",
+            "italian.alibaba.com",
+            "hindi.alibaba.com",
+            "korean.alibaba.com",
+            "spanish.alibaba.com",
+            "insights.alibaba.com",
+            "vietnamese.alibaba.com",
+            "french.alibaba.com",
+            "sale.alibaba.com",
+            "thai.alibaba.com",
+            "www.alibaba.com",
+            "dutch.alibaba.com",
+            "german.alibaba.com",
+            "indonesian.alibaba.com",
+            "turkish.alibaba.com",
+            "assets.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "s.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "s.alicdn.com"
+        ]
+    },
+    {
+        "domain": "aliexpress.com",
+        "dom_loading_resources_domains": [],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": []
+    },
+    {
+        "domain": "live.taobao.com",
+        "dom_loading_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "2.taobao.com",
+        "dom_loading_resources_domains": [
+            "g.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.cainiao.com",
+        "dom_loading_resources_domains": [
+            "hm.baidu.com",
+            "img.alicdn.com",
+            "cn.alicdn.com",
+            "www.cainiao.com",
+            "at.alicdn.com",
+            "gw.alicdn.com",
+            "tars.cainiao.com",
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "img.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "hm.baidu.com",
+            "cn.alicdn.com",
+            "at.alicdn.com",
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "ele.me",
+        "dom_loading_resources_domains": [
+            "",
+            "shadow.elemecdn.com",
+            "cube.elemecdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "",
+            "shadow.elemecdn.com"
+        ]
+    },
+    {
+        "domain": "fliggy.com",
+        "dom_loading_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.teambition.com",
+        "dom_loading_resources_domains": [
+            "",
+            "www.googletagmanager.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "www.googletagmanager.com",
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.dingtalk.com",
+        "dom_loading_resources_domains": [
+            "g.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "gw.alicdn.com"
+        ],
+        "dom_complete_resources_domains": []
+    },
+    {
+        "domain": "daxue.taobao.com",
+        "dom_loading_resources_domains": [
+            "g.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "chaoshi.tmall.com",
+        "dom_loading_resources_domains": [
+            "bar.tmall.com",
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "gtms03.alicdn.com",
+            "img.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "mail.aliyun.com",
+        "dom_loading_resources_domains": [
+            "",
+            "mail.aliyun.com",
+            "g.alicdn.com",
+            "assets.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            ""
+        ],
+        "dom_complete_resources_domains": [
+            "",
+            "g.alicdn.com",
+            "assets.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.damai.cn",
+        "dom_loading_resources_domains": [
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "img.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.koubei.com",
+        "dom_loading_resources_domains": [
+            "os.alipayobjects.com",
+            "zos.alipayobjects.com",
+            "gw.alipayobjects.com",
+            "g.alicdn.com",
+            "t.alipayobjects.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "zos.alipayobjects.com",
+            "img.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com",
+            "gw.alipayobjects.com"
+        ]
+    },
+    {
+        "domain": "www.taopiaopiao.com",
+        "dom_loading_resources_domains": [
+            "log.mmstat.com",
+            "img.alicdn.com",
+            "img01.taobaocdn.com",
+            "img03.taobaocdn.com",
+            "img02.taobaocdn.com",
+            "img04.taobaocdn.com",
+            "uaction.alicdn.com",
+            "g.tbcdn.cn",
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "",
+            "g.alicdn.com",
+            "img.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com",
+            "uaction.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.alimama.com",
+        "dom_loading_resources_domains": [
+            "gosspublic.alicdn.com",
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "gosspublic.alicdn.com",
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.alihealth.cn",
+        "dom_loading_resources_domains": [
+            "g.alicdn.com",
+            "gw.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.alipan.com",
+        "dom_loading_resources_domains": [
+            "g.alicdn.com",
+            "img.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.alisports.com",
+        "dom_loading_resources_domains": [
+            "img.alicdn.com",
+            "at.alicdn.com",
+            "tianshu.alicdn.com",
+            "aliwork.alicdn.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [
+            "img.alicdn.com"
+        ],
+        "dom_complete_resources_domains": [
+            "g.alicdn.com"
+        ]
+    },
+    {
+        "domain": "www.1688.com",
+        "dom_loading_resources_domains": [
+            "cbu01.alicdn.com",
+            "gm.mmstat.com",
+            "log.mmstat.com",
+            "img.alicdn.com",
+            "at.alicdn.com",
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ],
+        "dom_content_loaded_resources_domains": [],
+        "dom_complete_resources_domains": [
+            "o.alicdn.com",
+            "g.alicdn.com"
+        ]
+    }
+]
